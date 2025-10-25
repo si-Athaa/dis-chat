@@ -1,0 +1,82 @@
+body {
+  background: #111;
+  font-family: 'VT323', monospace;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chat-container {
+  width: 400px;
+  height: 500px;
+  background: #222;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 0 20px #6ff;
+}
+
+#chat-box {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scroll-behavior: smooth;
+}
+
+.bubble {
+  max-width: 75%;
+  padding: 8px 12px;
+  border-radius: 16px;
+  animation: fadeIn 0.2s ease-in;
+}
+
+.me {
+  background: #6af;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.other {
+  background: #a6f;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 2px solid #444;
+}
+
+.chat-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px;
+  background: #333;
+  color: white;
+}
+
+.chat-input button {
+  background: #6af;
+  border: none;
+  color: black;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', monospace;
+  transition: 0.2s;
+}
+
+.chat-input button:hover {
+  background: #9df;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
