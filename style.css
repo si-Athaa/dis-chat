@@ -1,82 +1,92 @@
 body {
-  background: #111;
+  background: url("https://i.ibb.co/jZCs5V9/pixel-sky.png") repeat;
+  background-size: cover;
   font-family: 'VT323', monospace;
-  color: white;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
-.chat-container {
-  width: 400px;
-  height: 500px;
-  background: #222;
-  border-radius: 20px;
+.chat {
+  width: 450px;
+  height: 550px;
+  background: rgba(255, 192, 255, 0.4);
+  border: 3px solid #fff;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 0 20px #6ff;
+  box-shadow: 0 0 15px #ff9efc;
 }
 
 #chat-box {
   flex: 1;
   padding: 10px;
   overflow-y: auto;
+}
+
+.message {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  scroll-behavior: smooth;
+  align-items: flex-start;
+  margin: 10px;
+  max-width: 80%;
+  animation: fadeIn 0.3s ease;
+}
+
+.message img.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 8px;
 }
 
 .bubble {
-  max-width: 75%;
   padding: 8px 12px;
-  border-radius: 16px;
-  animation: fadeIn 0.2s ease-in;
+  border-radius: 10px;
+  font-size: 16px;
+  word-wrap: break-word;
 }
 
 .me {
-  background: #6af;
+  flex-direction: row-reverse;
+  text-align: right;
   align-self: flex-end;
-  border-bottom-right-radius: 4px;
 }
 
-.other {
-  background: #a6f;
-  align-self: flex-start;
-  border-bottom-left-radius: 4px;
+.me .bubble {
+  background: #a3ffb0;
+  color: #000;
 }
 
-.chat-input {
+.other .bubble {
+  background: #d1b7ff;
+  color: #222;
+}
+
+.input {
   display: flex;
-  border-top: 2px solid #444;
+  background: rgba(255, 255, 255, 0.6);
 }
 
-.chat-input input {
+#msg {
   flex: 1;
   border: none;
-  outline: none;
   padding: 10px;
-  background: #333;
-  color: white;
+  outline: none;
+  font-family: inherit;
+  font-size: 16px;
+  background: transparent;
 }
 
-.chat-input button {
-  background: #6af;
+#send {
   border: none;
-  color: black;
-  padding: 10px 15px;
+  background: #b4e0ff;
   cursor: pointer;
-  font-family: 'Press Start 2P', monospace;
-  transition: 0.2s;
-}
-
-.chat-input button:hover {
-  background: #9df;
+  padding: 10px;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
+  from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
